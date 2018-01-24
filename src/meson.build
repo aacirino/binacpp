@@ -8,4 +8,5 @@ src = ['binacpp.cpp', 'binacpp_utils.cpp', 'binacpp_logger.cpp', 'binacpp_websoc
 hdr = ['binacpp.h', 'binacpp_utils.h', 'binacpp_logger.h', 'binacpp_websocket.h']
 incdir = include_directories('/usr/include', '/usr/local/include')
 install_headers(hdr, install_dir : '/usr/local/include/binacpp')
+install_data(sources : 'libbinacpp.pc', install_dir : '/usr/local/lib/pkgconfig')
 shared_library('binacpp', sources : src, version : '1.0', dependencies : deps, install : true, install_dir : '/usr/local/lib')
