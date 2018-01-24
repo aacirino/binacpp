@@ -1,4 +1,4 @@
-project('binacpp lib', 'cpp', default_options : ['-std=c++11'])
+project('binacpp lib', 'cpp', default_options : ['cpp_std=c++14'])
 jsoncpp_dep = dependency('jsoncpp', version : '>=1.8.3')
 libcurl_dep = dependency('libcurl', version : '>=7.43.0')
 libwebsockets_dep = dependency('libwebsockets', version : '>=2.4.0')
