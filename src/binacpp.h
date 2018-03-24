@@ -120,7 +120,7 @@ class BinaCPP {
 			double icebergQty,
 			long recvWindow,
 			Json::Value &json_result,
-		  boolean test = false ) ;
+		  bool test = false ) ;
 
 
 		static void get_order(

@@ -891,7 +891,7 @@ BinaCPP::send_order(
 	double icebergQty,
 	long recvWindow,
 	Json::Value &json_result,
-	boolean test )
+	bool test )
 {
 
 	BinaCPP_logger::write_log( "<BinaCPP::send_order>" ) ;
