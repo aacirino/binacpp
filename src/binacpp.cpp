@@ -121,9 +121,12 @@ BinaCPP::get_price( const char *symbol )
 
 	if ( str_result.size() > 0 ) {
 		try {
+			std::cout << "str_result : " << str_result << '\n';
 			Json::Reader reader;
-			reader.parse( str_result , ticker );
+			reader.parse( str_result , 	ticker );
+			std::cout << "ticker : " << ticker << '\n';
 			ret = atof( ticker["price"].asString().c_str() );
+			std::cout << "ret : " << ret << '\n';
 		} catch ( exception &e ) {
 			BinaCPP_logger::write_log( "<BinaCPP::get_price> Error ! %s", e.what() );
 		}
@@ -887,7 +890,8 @@ BinaCPP::send_order(
 	double stopPrice,
 	double icebergQty,
 	long recvWindow,
-	Json::Value &json_result )
+	Json::Value &json_result,
+	boolean test )
 {
 
 	BinaCPP_logger::write_log( "<BinaCPP::send_order>" ) ;
@@ -898,7 +902,10 @@ BinaCPP::send_order(
 	}
 
 	string url(BINANCE_HOST);
-	url += "/api/v3/order?";
+	if (test)
+		url += "/api/v3/order/test?";
+	else
+		url += "/api/v3/order?";
 
 	string action = "POST";
 

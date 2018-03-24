@@ -119,7 +119,8 @@ class BinaCPP {
 			double stopPrice,
 			double icebergQty,
 			long recvWindow,
-			Json::Value &json_result ) ;
+			Json::Value &json_result,
+		  boolean test = false ) ;
 
 
 		static void get_order(
