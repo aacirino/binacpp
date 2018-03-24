@@ -121,12 +121,12 @@ BinaCPP::get_price( const char *symbol )
 
 	if ( str_result.size() > 0 ) {
 		try {
-			std::cout << "str_result : " << str_result << '\n';
+			// std::cout << "str_result : " << str_result << '\n';
 			Json::Reader reader;
 			reader.parse( str_result , 	ticker );
-			std::cout << "ticker : " << ticker << '\n';
+			// std::cout << "ticker : " << ticker << '\n';
 			ret = atof( ticker["price"].asString().c_str() );
-			std::cout << "ret : " << ret << '\n';
+			// std::cout << "ret : " << ret << '\n';
 		} catch ( exception &e ) {
 			BinaCPP_logger::write_log( "<BinaCPP::get_price> Error ! %s", e.what() );
 		}
