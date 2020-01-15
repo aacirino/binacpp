@@ -1,0 +1,11 @@
+prefix="/usr/local"
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libbinacpp
+Description: A Binance C++ API interface library
+Version: 1
+
+Libs: -L${libdir} -lbinacpp
+Cflags: -I${includedir}
